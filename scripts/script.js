@@ -93,6 +93,40 @@ function lancerJeu() {
         Event.preventDefault()
         let nom = document.getElementById("nom").value
         let email = document.getElementById("email").value
-        afficherEmail(nom, email, score)
+        if (validerNom(nom) && validerEmail(email)) {
+            afficherEmail(nom, email, score)
+        } else {
+            console.log("error")
+        }
     })
+}
+
+/**
+ * 
+ * @param {*} nomAValider 
+ * @returns true si le nom à au moins deux caractère
+ */
+function validerNom(nomAValider) {
+    if (nomAValider.trim().length > 1) {
+        console.log(nomAValider + " est valide")
+        return true
+    }
+    console.log(nomAValider + " n'est pas valide")
+    return false
+}
+
+/**
+ * 
+ * @param {*} emailAValider 
+ * @returns true si l'email est valide
+ */
+function validerEmail(emailAValider) {
+    let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
+    if (emailRegExp.test(emailAValider)) {
+        console.log(emailAValider + " est valide")
+        return true
+    } else {
+        console.log(emailAValider + " n'est pas valide")
+        return false
+    }
 }
