@@ -1,5 +1,15 @@
 console.log(" lancement du programme")
 
+//Liste des mots utilisé par le jeu
+let listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"]
+let listeMots = ["Cachalot", "Pétunia", "Serviette"]
+
+
+
+/**
+ * Tests de méthodes
+ */
+
 let inputEcriture = document.getElementById("inputEcriture")
 //console.log(inputEcriture)
 
@@ -34,9 +44,6 @@ body.innerHTML = div */
 for (let i = 0; i < listeInputRadio.length; i++) {
     //console.log(listeInputRadio[i]);
 }
-//Liste des mots utilisé par le jeu
-let listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"]
-let listeMots = ["Cachalot", "Pétunia", "Serviette"]
 
 let monBouton = document.getElementById("btnValiderMot")
 monBouton.addEventListener("click", () => {
